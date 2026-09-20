@@ -1,0 +1,4 @@
+role: provider
+spec:
+  path: openapi.yaml
+criticality: high

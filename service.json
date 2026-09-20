@@ -1,0 +1,6 @@
+{
+  "name": "catalog-api",
+  "language": "typescript",
+  "role": "provider",
+  "calls": []
+}
