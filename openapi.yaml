@@ -174,12 +174,12 @@ components:
   schemas:
     Product:
       type: object
-      required: [id, name, priceCents, categoryId, status]
+      required: [id, name, priceInCents, categoryId, status]
       properties:
         id: { type: string }
         name: { type: string }
         description: { type: string, nullable: true }
-        priceCents: { type: integer }
+        priceInCents: { type: integer }
         categoryId: { type: string }
         status: { type: string, enum: [active, draft, archived] }
         tags:
@@ -195,11 +195,11 @@ components:
 
     CreateProductRequest:
       type: object
-      required: [name, priceCents, categoryId]
+      required: [name, priceInCents, categoryId]
       properties:
         name: { type: string }
         description: { type: string, nullable: true }
-        priceCents: { type: integer }
+        priceInCents: { type: integer }
         categoryId: { type: string }
         tags:
           type: array
@@ -210,5 +210,5 @@ components:
       properties:
         name: { type: string }
         description: { type: string, nullable: true }
-        priceCents: { type: integer }
+        priceInCents: { type: integer }
         status: { type: string, enum: [active, draft, archived] }
