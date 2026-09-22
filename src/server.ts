@@ -26,9 +26,9 @@ export function createCatalogApp() {
     },
   ];
 
-  app.get("/v1/products", async (req) => {
-    return { products, total: products.length, page: 1 };
-  });
+  // app.get("/v1/products", async (req) => {
+  //   return { products, total: products.length, page: 1 };
+  // });
 
   app.get("/v1/products/:id", async (req, reply) => {
     const { id } = req.params as { id: string };
