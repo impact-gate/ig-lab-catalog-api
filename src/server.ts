@@ -61,9 +61,9 @@ export function createCatalogApp() {
     return found;
   });
 
-  app.delete("/v1/products/:id", async (req, reply) => {
-    return reply.status(204).send();
-  });
+  // app.delete("/v1/products/:id", async (req, reply) => {
+  //   return reply.status(204).send();
+  // });
 
   app.get("/v1/categories", async () => {
     return {
