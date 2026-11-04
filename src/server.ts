@@ -15,10 +15,26 @@ export function createCatalogApp() {
       inventory: { inStock: true, quantity: 45, leadDays: 2 },
     },
     {
+
+export function createCatalogApp() {
+  const app = Fastify({ logger: false });
+
+  const products = [
+    {
+      id: "prod_101",
+      name: "Standard Laptop",
+      description: "Business laptop 16GB",
+      unitPriceCents: 99900,
+      categoryId: "cat_electronics",
+      status: "active",
+      tags: ["hardware", "computing"],
+      inventory: { inStock: true, quantity: 45, leadDays: 2 },
+    },
+    {
       id: "prod_102",
       name: "Wireless Mouse",
       description: "Ergonomic bluetooth mouse",
-      priceCents: 2999,
+      unitPriceCents: 2999,
       categoryId: "cat_electronics",
       status: "active",
       tags: ["hardware", "accessories"],
@@ -43,7 +59,7 @@ export function createCatalogApp() {
       id: "prod_" + Date.now(),
       name: body.name,
       description: body.description ?? null,
-      priceCents: body.priceCents,
+      unitPriceCents: body.unitPriceCents,
       categoryId: body.categoryId,
       status: "active",
       tags: body.tags ?? [],
@@ -92,10 +108,10 @@ export function createCatalogApp() {
     const found = products.find((p) => p.id === productId);
     if (!found) return reply.status(404).send({ error: "Not found" });
     const discountPercent = 10;
-    const effectivePriceCents = Math.round(found.priceCents * (1 - discountPercent / 100));
+    const effectivePriceCents = Math.round(found.unitPriceCents * (1 - discountPercent / 100));
     return {
       productId,
-      basePriceCents: found.priceCents,
+      basePriceCents: found.unitPriceCents,
       currency: "USD",
       discountPercent,
       effectivePriceCents,
