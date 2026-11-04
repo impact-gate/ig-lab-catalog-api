@@ -8,22 +8,6 @@ export function createCatalogApp() {
       id: "prod_101",
       name: "Standard Laptop",
       description: "Business laptop 16GB",
-      priceCents: 99900,
-      categoryId: "cat_electronics",
-      status: "active",
-      tags: ["hardware", "computing"],
-      inventory: { inStock: true, quantity: 45, leadDays: 2 },
-    },
-    {
-
-export function createCatalogApp() {
-  const app = Fastify({ logger: false });
-
-  const products = [
-    {
-      id: "prod_101",
-      name: "Standard Laptop",
-      description: "Business laptop 16GB",
       unitPriceCents: 99900,
       categoryId: "cat_electronics",
       status: "active",
